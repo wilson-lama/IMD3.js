@@ -80,3 +80,37 @@ function getViewportHeight() {
         document.documentElement.clientHeight
     );
 }
+
+function filterLinksNodes(nodesAll, linksAll, callback) {
+    let links = linksAll.filter(callback);
+
+    const nodesSet = new Set();
+
+    // sanitize - FIXME - sometimes string, sometimes object
+    links = links.map((d) => {
+        let source = d.source;
+        let target = d.target;
+
+        if (typeof source == "object") {
+            source = d.source.id;
+        }
+        if (typeof target == "object") {
+            target = d.target.id;
+        }
+
+        return {
+            source: source,
+            target: target,
+            value: d.value,
+        };
+    });
+
+    links.forEach((d) => {
+        nodesSet.add(d.source);
+        nodesSet.add(d.target);
+    });
+
+    const nodes = nodesAll.filter((d) => nodesSet.has(d.id));
+
+    return [nodes, links];
+}

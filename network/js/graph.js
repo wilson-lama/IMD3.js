@@ -29,8 +29,8 @@ async function constructGraph(nodes, links) {
     const forceNode = d3.forceManyBody();
     const forceLink = d3.forceLink(links).id(({ index: i }) => vertices[i]);
 
-    let distance = 100,
-        strength = -250;
+    let distance = 200,
+        strength = -550;
 
     const simulation = d3
         .forceSimulation(nodes)
@@ -59,50 +59,61 @@ async function constructGraph(nodes, links) {
         .selectAll("line")
         .data(links)
         .join("line")
-        .attr("stroke-width", (d) => d.value) // edge width by synergy strength
+        .attr("stroke-width", (d) => d.value * 2) // edge width by synergy strength
         .attr("class", (d) =>
             makeEdgeId(cleanUpName(d.source.id), cleanUpName(d.target.id))
         );
     // note: using class instead of id because edges contain duplicates
 
-    const imgWidth = 32, // helper vars
+    const imgWidth = 40, // helper vars
         imgHeight = imgWidth,
         imgX = (-1 * imgWidth) / 2,
         imgY = imgX;
 
-    // const node = svg
-    //     .append("g")
-    //     .selectAll("image")
-    //     .data(nodes)
-    //     .join("image")
-    //     .attr("id", (d) => d.id)
-    //     .attr("xlink:href", (d) => d.url)
-    //     .attr("x", imgX)
-    //     .attr("y", imgY)
-    //     .attr("width", imgWidth)
-    //     .attr("height", imgHeight)
-    //     .call(drag(simulation));
-
     const node = svg
         .append("g")
-        .attr("fill", "currentColor")
-        .attr("stroke", "#fff")
-        .attr("stroke-opacity", 1)
-        .attr("stroke-width", 1.5)
-        .selectAll("circle")
+        .selectAll("image")
         .data(nodes)
-        .join("circle")
+        .join("image")
         .attr("id", (d) => cleanUpName(d.id))
-        .attr("r", 5)
+        .attr("xlink:href", (d) => d.image)
+        .attr("x", imgX)
+        .attr("y", imgY)
+        .attr("width", imgWidth)
+        .attr("height", imgHeight)
         .call(drag(simulation));
 
+    // const node = svg
+    //     .append("g")
+    //     .attr("fill", "currentColor")
+    //     .attr("stroke", "#fff")
+    //     .attr("stroke-opacity", 1)
+    //     .attr("stroke-width", 1.5)
+    //     .selectAll("circle")
+    //     .data(nodes)
+    //     .join("circle")
+    //     .attr("id", (d) => cleanUpName(d.id))
+    //     .attr("r", 5)
+    //     .call(drag(simulation));
+
     // add hover effects to nodes
-    node.on("mouseover", function (d, i) {
+    node.on("mouseover", function (event, d) {
         updateAdjacencyOutline(this, "red", "red", graph);
         document.querySelector("#connection-display").innerHTML = this.id;
-    }).on("mouseout", function (d, i) {
+        d3.select(`#${cleanUpName(d.id)}`)
+            .attr("width", imgWidth * 3)
+            .attr("height", imgHeight * 3)
+            .attr("x", imgX * 3)
+            .attr("y", imgY * 3)
+        // TODO add floating label next to each node
+    }).on("mouseout", function (event, d) {
         updateAdjacencyOutline(this, "none", "#ccc", graph);
         document.querySelector("#connection-display").innerHTML = "";
+        d3.select(`#${cleanUpName(d.id)}`)
+            .attr("width", imgWidth)
+            .attr("height", imgHeight)
+            .attr("x", imgX)
+            .attr("y", imgY);
     });
 
     // animation logic
