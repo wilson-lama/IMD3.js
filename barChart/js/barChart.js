@@ -17,7 +17,7 @@ class BarChart {
         // vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         // vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
 
-        vis.width = 2000;
+        vis.width = 1300;
         vis.height = 500;
 
         // SVG drawing area
@@ -58,8 +58,14 @@ class BarChart {
 
         vis.titles = []
         vis.principalsData.forEach(e => {
-            vis.titles.push(vis.basicsData.find(d => e["tconst"] == d["tconst"])["primaryTitle"])
+            vis.titles.push({
+                "title": vis.basicsData.find(d => e["tconst"] == d["tconst"])["primaryTitle"],
+                "rating": vis.ratingsData.find(d => e["tconst"] == d["tconst"])["averageRating"],
+            })
         })
+
+        vis.titles.sort((a, b) => -(a.rating - b.rating))
+        vis.titles = Array.from(vis.titles, d => d.title)
 
         vis.updateVis();
     }
