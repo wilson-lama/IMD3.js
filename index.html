@@ -47,20 +47,20 @@
                 >
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Home</a>
+                            <a class="nav-link active" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Network</a>
+                            <a class="nav-link" href="network/index.html"
+                                >Network</a
+                            >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../barChart/index.html"
+                            <a class="nav-link" href="barChart/index.html"
                                 >Barchart</a
                             >
                         </li>
                         <li class="nav-item">
-                            <a
-                                class="nav-link"
-                                href="../beeswarmChart/index.html"
+                            <a class="nav-link" href="beeswarmChart/index.html"
                                 >Beeswarm</a
                             >
                         </li>
@@ -69,38 +69,20 @@
             </div>
         </nav>
 
-        <div style="padding-left: 5vh; padding-right: 5vh">
-            <h3>Leonardo DiCaprio's Film Collaboration Network</h3>
-            <div>
-                Node:
-                <span id="connection-display"></span>
+        <div style="padding: 5vh">
+            <div class="container">
+                <h3>IMD3.js - A movie analytics dashboard</h3>
+                <br />
+                <p>
+                    We have 3 plots here that explore some interesting topics in
+                    the film industry.
+                </p>
+                <p>Use the navbar to navigate through these plots.</p>
+                <p>
+                    Note: This is only our v1 prototype; some plots may not be
+                    fully implemented.
+                </p>
             </div>
-
-            <div
-                id="floating-div"
-                style="position: fixed; float: left; clear: left"
-            >
-                <div
-                    id="select-filter-float"
-                    class="bg-warning text-dark p-2 mt-3 ms-2 rounded"
-                    style="float: left; clear: left; visibility: visible"
-                >
-                    <label
-                        for="select-filter"
-                        class="pb-2"
-                        style="font-size: 0.85rem"
-                        ># Collaborations:</label
-                    ><select
-                        id="select-filter"
-                        class="form-select form-select-sm"
-                    >
-                        <option>All</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="container" id="network-container"></div>
-            <div id="label-placeholder"></div>
         </div>
 
         <!-- embedding JS libraries -->
