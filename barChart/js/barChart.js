@@ -12,7 +12,7 @@ class BarChart {
     initVis(){
         let vis = this;
 
-        vis.margin = {top: 40, right: 40, bottom: 200, left: 40};
+        vis.margin = {top: 10, right: 60, bottom: 200, left: 80};
 
         // vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         // vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
@@ -48,7 +48,23 @@ class BarChart {
             .attr("transform", "translate(0," + vis.height + ")")
 
         vis.svg.append("g")
-            .attr("class", "y-axis axis");
+            .attr("class", "y-axis axis")
+
+        // axis titles
+        vis.svg.append("text")
+            .attr("x", 600)
+            .attr("y", 650)
+            .attr("fill", "grey")
+            .attr("font-weight", 10)
+            .text("Movie Title")
+
+        vis.svg.append("text")
+            .attr("x", -300)
+            .attr("y", -40)
+            .attr("fill", "grey")
+            .attr("transform", "rotate(-90)")
+            .text("IMDb Rating")
+
 
         vis.wrangleData();
     }
@@ -57,6 +73,8 @@ class BarChart {
         let vis = this;
 
         vis.titles = []
+
+        // get title and ratings
         vis.principalsData.forEach(e => {
             vis.titles.push({
                 "title": vis.basicsData.find(d => e["tconst"] == d["tconst"])["primaryTitle"],
@@ -64,6 +82,7 @@ class BarChart {
             })
         })
 
+        // sort titles by rating
         vis.titles.sort((a, b) => -(a.rating - b.rating))
         vis.titles = Array.from(vis.titles, d => d.title)
 
@@ -97,10 +116,10 @@ class BarChart {
         vis.svg.select(".x-axis")
             .call(vis.xAxis)
             .selectAll("text")
-            .attr("y", 0)
-            .attr("x", 9)
+            .attr("y", 10)
+            .attr("x", 10)
             .attr("dy", ".35em")
-            .attr("transform", "rotate(90)")
+            .attr("transform", "rotate(45)")
             .style("text-anchor", "start");
 
         vis.svg.select(".y-axis").call(vis.yAxis);
