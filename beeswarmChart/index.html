@@ -1,24 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>CS171 - Boilerplate</title>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>CS171 - Boilerplate</title>
 
-		<!-- Load CSS libraries -->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-		<link rel="stylesheet" href="css/style.css">
+        <!-- Load CSS libraries -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="css/style.css" />
 
-		<!-- GOOGLE FONTS -->
-		<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,400italic,300italic' rel='stylesheet' type='text/css'>
-	</head>
+        <!-- GOOGLE FONTS -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,400italic,300italic"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </head>
 
-	<!-- SOME SAMPLE HTML HERE - DELETE EVERYTHING INSIDE THE BODY EXCEPT THE SCRIPTS ON THE BOTTOM TO START FROM SCRATCH -->
-	<!-- DON'T WRITE CSS IN YOUR HTML LIKE WE DID HERE - THE INLINE CSS SHOULD HELP YOU TO UNDERSTAND THE BEHAVIOR OF THE ELEMENTS BETTER -
+    <!-- SOME SAMPLE HTML HERE - DELETE EVERYTHING INSIDE THE BODY EXCEPT THE SCRIPTS ON THE BOTTOM TO START FROM SCRATCH -->
+    <!-- DON'T WRITE CSS IN YOUR HTML LIKE WE DID HERE - THE INLINE CSS SHOULD HELP YOU TO UNDERSTAND THE BEHAVIOR OF THE ELEMENTS BETTER -
 		 WHEN SUBMITTING, WE ALWAYS EXPECT CLEAR SEPARATION OF HTML, CSS, AND JS INTO THE PROPER FILES -->
-	<body>
-
+    <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-warning">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">IMD3.js</a>
@@ -42,10 +50,14 @@
                             <a class="nav-link" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../network/index.html">Network</a>
+                            <a class="nav-link" href="../network/index.html"
+                                >Network</a
+                            >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="../barChart/index.html">Barchart</a>
+                            <a class="nav-link" href="../barChart/index.html"
+                                >Barchart</a
+                            >
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="#">Beeswarm</a>
@@ -55,27 +67,25 @@
             </div>
         </nav>
 
-		<div class="row">
-		</div>
+        <div class="row">
+            <div
+                class="col-12 align-items-center justify-content-center"
+                id="beeswarmChart"
+            ></div>
+        </div>
 
-		<div class="row">
-			<div class="col" id="lineChart">
-			</div>
-			<div class="col" id="beeswarmChart">
-			</div>
-		</div>
+        <!-- embedding JS libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+            crossorigin="anonymous"
+        ></script>
 
+        <!-- d3 -->
+        <script src="https://d3js.org/d3.v7.min.js"></script>
 
-
-
-		<!-- embedding JS libraries -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-
-		<!-- d3 -->
-		<script src="https://d3js.org/d3.v7.min.js"></script>
-
-		<!-- own js files -->
-		<script src="js/main.js"></script>
-		<script src="js/beeswarmChart.js"></script>
-	</body>
+        <!-- own js files -->
+        <script src="js/main.js"></script>
+        <script src="js/beeswarmChart.js"></script>
+    </body>
 </html>

@@ -117,7 +117,7 @@ async function constructGraph(nodes, links) {
             .style("left", event.pageX + 20 + "px")
             .style("top", event.pageY + "px").html(`
                 <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 5px">
-                    <span class="text-center">${d.id}<span>  
+                    <span class="text-center">${d.id}</span>  
                 </div>`);
     }).on("mouseout", function (event, d) {
         updateAdjacencyOutline(this, "none", "#ccc", graph);
