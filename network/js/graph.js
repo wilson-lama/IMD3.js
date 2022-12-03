@@ -11,6 +11,13 @@ async function constructGraph(nodes, links) {
     // const nodes = data["nodes"];
     // const links = data["links"];
 
+    // tooltip for nodes
+    const tooltip = d3
+        .select("body")
+        .append("div")
+        .attr("class", "tooltip")
+        .attr("id", "nodeTooltip");
+
     const vertices = nodes.map((d) => d.id);
 
     // make adjacency list
@@ -29,7 +36,7 @@ async function constructGraph(nodes, links) {
     const forceNode = d3.forceManyBody();
     const forceLink = d3.forceLink(links).id(({ index: i }) => vertices[i]);
 
-    let distance = 200,
+    let distance = 150,
         strength = -550;
 
     const simulation = d3
@@ -99,21 +106,27 @@ async function constructGraph(nodes, links) {
     // add hover effects to nodes
     node.on("mouseover", function (event, d) {
         updateAdjacencyOutline(this, "red", "red", graph);
-        document.querySelector("#connection-display").innerHTML = this.id;
         d3.select(`#${cleanUpName(d.id)}`)
             .attr("width", imgWidth * 3)
             .attr("height", imgHeight * 3)
             .attr("x", imgX * 3)
-            .attr("y", imgY * 3)
-        // TODO add floating label next to each node
+            .attr("y", imgY * 3);
+        // add floating label next to each node
+        tooltip
+            .style("opacity", 1)
+            .style("left", event.pageX + 20 + "px")
+            .style("top", event.pageY + "px").html(`
+                <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 5px">
+                    <span class="text-center">${d.id}<span>  
+                </div>`);
     }).on("mouseout", function (event, d) {
         updateAdjacencyOutline(this, "none", "#ccc", graph);
-        document.querySelector("#connection-display").innerHTML = "";
         d3.select(`#${cleanUpName(d.id)}`)
             .attr("width", imgWidth)
             .attr("height", imgHeight)
             .attr("x", imgX)
             .attr("y", imgY);
+        tooltip.style("opacity", 0);
     });
 
     // animation logic
@@ -155,6 +168,11 @@ async function constructGraph(nodes, links) {
                 imgHeight,
                 yOffset
             );
+
+            // update tooltip position while dragging
+            tooltip
+                .style("left", event.sourceEvent.pageX + 20 + "px")
+                .style("top", event.sourceEvent.pageY + "px");
         }
 
         function dragended(event) {
