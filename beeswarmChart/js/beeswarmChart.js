@@ -102,7 +102,7 @@ function BubbleChart(
     leaf.on("mouseover", function (event, d) {
         // tooltip
         tooltip
-            .style("opacity", 1)
+            .style("opacity", 0.8)
             .style("left", event.pageX + 20 + "px")
             .style("top", event.pageY + "px").html(`
                 <div style="border: thin solid grey; border-radius: 5px; background: darkgrey; padding: 5px">

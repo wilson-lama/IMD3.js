@@ -1,76 +1,134 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+
+<html class="no-js" lang="">
     <head>
-        <meta charset="utf-8" />
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>IMD3.js</title>
 
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
-            crossorigin="anonymous"
-        />
-    </head>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- SOME SAMPLE HTML HERE - DELETE EVERYTHING INSIDE THE BODY EXCEPT THE SCRIPTS ON THE BOTTOM TO START FROM SCRATCH -->
-    <!-- DON'T WRITE CSS IN YOUR HTML LIKE WE DID HERE - THE INLINE CSS SHOULD HELP YOU TO UNDERSTAND THE BEHAVIOR OF THE ELEMENTS BETTER -
-		 WHEN SUBMITTING, WE ALWAYS EXPECT CLEAR SEPARATION OF HTML, CSS, AND JS INTO THE PROPER FILES -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100|Roboto+Condensed:700" rel="stylesheet" type="text/css">
+
+        <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+        crossorigin="anonymous"
+    />
+        <link rel="stylesheet" href="css/styles.css">
+
+        <link rel="stylesheet" href="network/css/style.css">
+        <link rel="stylesheet" href="barChart/css/style.css">
+        <link rel="stylesheet" href="beeswarmChart/css/style.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">IMD3.js</a>
-                <button
-                    class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                >
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div
-                    class="collapse navbar-collapse"
-                    id="navbarSupportedContent"
-                >
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="network/index.html"
-                                >Network</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="barChart/index.html"
-                                >Barchart</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="beeswarmChart/index.html"
-                                >Beeswarm</a
-                            >
-                        </li>
-                    </ul>
-                </div>
-            </div>
+
+        <div id="intro" class="header-container fs">
+            <header class="wrapper">
+                <h1 class="title">IMD3.js</h1>
+                <p>This is a movie analytics storyboard.</p>
+                <p>We have 3 plots here that explore some interesting topics in the film industry.</p>
+            </header>
+            <span class="scroll-hint">Scroll Down</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="#intro"><span class="nav-dot"></span><span class="nav-label">Intro</span></a></li>
+                <li><a href="#slide01"><span class="nav-dot"></span><span class="nav-label">Network</span></a></li>
+                <li><a href="#slide02"><span class="nav-dot"></span><span class="nav-label">Barchart</span></a></li>
+                <li><a href="#slide03"><span class="nav-dot"></span><span class="nav-label">Beeswarm</span></a></li>
+                <li><a href="#slide04"><span class="nav-dot"></span><span class="nav-label">End</span></a></li>
+                <li><a href="#footer"><span class="nav-dot"></span><span class="nav-label">Footer</span></a></li>
+            </ul>
         </nav>
 
-        <div style="padding: 5vh">
-            <div class="container">
-                <h3>IMD3.js - A movie analytics dashboard</h3>
-                <br />
-                <p>
-                    We have 3 plots here that explore some interesting topics in
-                    the film industry.
-                </p>
-                <p>Use the navbar to navigate through these plots.</p>
-            </div>
+        <div class="main-container">
+            
+            <article id="slide01" class="slide fs" style="position:relative; z-index:10">
+                <div style="padding-left: 5vh; padding-right: 5vh" style="position:relative; z-index:10">
+                    <h3 class="pt-2">Leonardo DiCaprio's Film Collaboration Network</h3>
+        
+                    <div
+                        id="floating-div"
+                        style="position: absolute; float: left; clear: left"
+                    >
+                        <div
+                            id="select-filter-float"
+                            class="bg-warning text-dark p-2 mt-3 ms-2 rounded"
+                            style="float: left; clear: left; visibility: visible"
+                        >
+                            <label
+                                for="select-filter"
+                                class="pb-2"
+                                style="font-size: 0.85rem"
+                                ># Collaborations:</label
+                            ><select
+                                id="select-filter"
+                                class="form-select form-select-sm"
+                            >
+                                <option>All</option>
+                            </select>
+                        </div>
+                    </div>
+        
+                    <div class="container" id="network-container"></div>
+                </div>
+            </article>
+
+            <article id="slide02" class="slide fs">
+                <div class="row">
+                    <h3>Leonardo DiCaprio's Highest Rated Movies</h3>
+                    <div class="col" id="barChart"></div>
+            </article>
+
+            <article id="slide03" class="slide fs" style="height: 100%;">
+                <h3 class="ms-5" style="color: black;">Top 200 Highest Grossing Films of All Time</h3>
+                <div class="row">
+                    <div
+                        class="col-12 align-items-center justify-content-center"
+                        id="beeswarmChart"
+                        style="color: black;"
+                    ></div>
+                </div>
+            </article>
+
+            <article id="slide04" class="slide fs">
+                <div class="wrapper">
+                    <header>
+                        <h1>The End</h1>
+                    </header>
+                    <section>
+                        <h2>TODO</h2>
+                        <p>Some concluding thoughts.</p>
+                        <p>
+                            <a href="https://www.imdb.com/name/nm0000138/?ref_=nv_sr_srsg_0" target="_blank" class="button">Leo's Profile</a>
+                        </p>
+                    </section>
+                </div> <!-- .wrapper -->
+            </article>
+
+        </div> <!-- #main-container -->
+
+        <div class="footer-container" id="footer">
+            <footer class="wrapper">
+                <h3>Harvard University | CS171 Fall 2022 Final Project | The IMD3.js Group | <a href="https://github.com/wilson-lama/IMD3.js" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                  </svg></a></h3>
+            </footer>
         </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+
 
         <!-- embedding JS libraries -->
         <script
@@ -81,5 +139,17 @@
 
         <!-- d3 -->
         <script src="https://d3js.org/d3.v7.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+        <script src="network/js/helper.js"></script>
+        <script src="network/js/graph.js"></script>
+        <script src="network/js/main.js"></script>
+
+        <script src="barChart/js/barChart.js"></script>
+        <script src="barChart/js/main.js"></script>
+
+        <script src="beeswarmChart/js/beeswarmChart.js"></script>
+        <script src="beeswarmChart/js/main.js"></script>
     </body>
 </html>

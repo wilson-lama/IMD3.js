@@ -13,7 +13,7 @@ async function constructGraph(nodes, links) {
 
     // tooltip for nodes
     const tooltip = d3
-        .select("body")
+        .select("#slide01")
         .append("div")
         .attr("class", "tooltip")
         .attr("id", "nodeTooltip");
@@ -48,7 +48,7 @@ async function constructGraph(nodes, links) {
 
     // create DOM elements
     const width = getViewportWidth(), // helper vars - old: 1400 x 700
-        height = getViewportHeight() - 40;
+        height = getViewportHeight() / 4 - 200; // was () - 40
     let yOffset = 0;
 
     const svg = d3
@@ -114,8 +114,9 @@ async function constructGraph(nodes, links) {
         // add floating label next to each node
         tooltip
             .style("opacity", 1)
+            .style("color", "black")
             .style("left", event.pageX + 20 + "px")
-            .style("top", event.pageY + "px").html(`
+            .style("top", event.pageY - 700 + "px").html(`
                 <div style="border: thin solid grey; border-radius: 5px; background: lightgrey; padding: 5px">
                     <span class="text-center">${d.id}</span>  
                 </div>`);
@@ -172,7 +173,7 @@ async function constructGraph(nodes, links) {
             // update tooltip position while dragging
             tooltip
                 .style("left", event.sourceEvent.pageX + 20 + "px")
-                .style("top", event.sourceEvent.pageY + "px");
+                .style("top", event.sourceEvent.pageY - 700 + "px");
         }
 
         function dragended(event) {

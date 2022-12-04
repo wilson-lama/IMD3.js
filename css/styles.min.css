@@ -1,0 +1,427 @@
+hr,
+input[type="search"] {
+    box-sizing: content-box;
+}
+pre,
+textarea {
+    overflow: auto;
+}
+fieldset,
+hr,
+legend,
+td,
+th {
+    padding: 0;
+}
+body,
+fieldset {
+    margin: 0;
+}
+fieldset,
+hr,
+img,
+legend {
+    border: 0;
+}
+.hidden,
+.invisible {
+    visibility: hidden;
+}
+.clear:after,
+.clearfix:after {
+    clear: both;
+}
+.clear,
+.clearfix {
+    *zoom: 1;
+}
+.clear:after,
+.clear:before {
+    content: " ";
+    display: table;
+}
+.clear {
+    *zoom: 1;
+} /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block;
+}
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+[hidden],
+template {
+    display: none;
+}
+hr,
+nav a {
+    display: block;
+}
+a {
+    background-color: transparent;
+}
+a:active,
+a:hover {
+    outline: 0;
+}
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+b,
+optgroup,
+strong {
+    font-weight: 700;
+}
+dfn {
+    font-style: italic;
+}
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+mark {
+    background: #ff0;
+    color: #000;
+}
+small {
+    font-size: 80%;
+}
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup {
+    top: -0.5em;
+}
+sub {
+    bottom: -0.25em;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+figure {
+    margin: 1em 40px;
+}
+hr {
+    height: 1px;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+}
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+button {
+    overflow: visible;
+}
+button,
+select {
+    text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+input {
+    line-height: normal;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+input[type="search"] {
+    -webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+textarea {
+    resize: vertical;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+} /*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+.main aside,
+.title,
+nav a,
+nav a:hover,
+nav a:visited {
+    color: #fff;
+}
+body {
+    font: 16px/26px Helvetica, Helvetica Neue, Arial;
+    background: #ff0;
+}
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+.header-container {
+    border-bottom: 20px solid #e44d26;
+}
+.footer-container,
+.main aside {
+    border-top: 20px solid #e44d26;
+}
+.footer-container,
+.header-container,
+.main aside {
+    background: #f16529;
+}
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+nav a {
+    margin-bottom: 10px;
+    padding: 15px 0;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    background: #e44d26;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+.main {
+    padding: 30px 0;
+}
+.main article h1 {
+    font-size: 2em;
+}
+.main aside {
+    padding: 0 5% 10px;
+}
+.footer-container footer {
+    color: #fff;
+    padding: 20px 0;
+}
+.ie7 .title {
+    padding-top: 20px;
+}
+@media only screen and (min-width: 480px) {
+    nav a {
+        float: left;
+        width: 27%;
+        margin: 0 1.7%;
+        padding: 25px 2%;
+    }
+    nav li:first-child a {
+        margin-left: 0;
+    }
+    nav li:last-child a {
+        margin-right: 0;
+    }
+    nav ul li {
+        display: inline;
+    }
+    .oldie nav a {
+        margin: 0 0.7%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .header-container,
+    .main aside {
+        box-shadow: 0 5px 10px #aaa;
+    }
+    .title {
+        float: left;
+    }
+    nav {
+        float: right;
+        width: 38%;
+    }
+    .main article {
+        float: left;
+        width: 57%;
+    }
+    .main aside {
+        float: right;
+        width: 28%;
+    }
+}
+@media only screen and (min-width: 1140px) {
+    .wrapper {
+        width: 1026px;
+        margin: 0 auto;
+    }
+}
+.hidden {
+    display: none !important;
+}
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+.clearfix:after,
+.clearfix:before {
+    content: " ";
+    display: table;
+}
+.clearfix {
+    *zoom: 1;
+}
+@media print {
+    *,
+    :after,
+    :before {
+        background: 0 0 !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    blockquote,
+    img,
+    pre,
+    tr {
+        page-break-inside: avoid;
+    }
+    * {
+        background: 0 0 !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    .ir a:after,
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    blockquote,
+    pre {
+        border: 1px solid #999;
+    }
+    thead {
+        display: table-header-group;
+    }
+    img {
+        max-width: 100% !important;
+    }
+    @page {
+        margin: 0.5cm;
+    }
+    h2,
+    h3,
+    p {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
