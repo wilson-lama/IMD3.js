@@ -33,11 +33,11 @@ class LineChart {
             .domain([vis.parseDate("1990"), vis.parseDate("2020")])
             .range([0, vis.width]);
 
-        vis.y = d3.scaleLinear().domain([0, 5]).range([vis.height, 0]);
+        vis.y = d3.scaleLinear().domain([0, 45]).range([vis.height, 0]);
 
         vis.xAxis = d3.axisBottom().scale(vis.x);
 
-        vis.yAxis = d3.axisLeft().scale(vis.y).tickValues([0, 1, 2, 3, 4, 5]);
+        vis.yAxis = d3.axisLeft().scale(vis.y);
 
         vis.svg
             .append("g")
@@ -87,15 +87,15 @@ class LineChart {
         vis.maxYear = Number.parseInt(d3.max(Object.keys(countsObj)));
 
         const countsArray = [];
+        let cumCount = 0; // cumulative count
 
         for (let i = vis.minYear; i < vis.maxYear; i++) {
-            let currCount = 0;
             if (Object.keys(countsObj).includes(String(i))) {
-                currCount = countsObj[String(i)];
+                cumCount += countsObj[String(i)];
             }
             countsArray.push({
                 YEAR: i,
-                COUNT: currCount,
+                COUNT: cumCount,
             });
         }
 

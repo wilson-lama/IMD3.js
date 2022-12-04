@@ -342,7 +342,7 @@ p {
     background: -webkit-linear-gradient(top, #d2bb4c 0%, #c98332 100%);
     background: linear-gradient(to bottom, #d2bb4c 0%, #c98332 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2bb4c', endColorstr='#c98332', GradientType=0 ); }
-  .slide#slide05 {
+  .slide#end {
     background: #8c68bb;
     background: -webkit-gradient(left top, left bottom, color-stop(0%, #8c68bb), color-stop(100%, #313972));
     background: -webkit-linear-gradient(top, #8c68bb 0%, #313972 100%);
