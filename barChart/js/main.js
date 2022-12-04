@@ -9,13 +9,18 @@ let promises = [
 
 Promise.all(promises)
     .then(function (data) {
-        initMainPage(data)
+        initMainPage(data);
     })
     .catch(function (err) {
-        console.log(err)
+        console.log(err);
     });
 
 function initMainPage(allDataArray) {
-    console.log(allDataArray)
-    barChart = new BarChart("barChart", allDataArray[0], allDataArray[1], allDataArray[2])
+    console.log(allDataArray);
+    barChart = new BarChart(
+        "barChart",
+        allDataArray[0],
+        allDataArray[1],
+        allDataArray[2]
+    );
 }
