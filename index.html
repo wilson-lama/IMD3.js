@@ -20,6 +20,7 @@
         <link rel="stylesheet" href="css/styles.css">
         <link rel="stylesheet" href="network/css/style.css">
         <link rel="stylesheet" href="barChart/css/style.css">
+        <link rel="stylesheet" href="lineChart/css/style.css">
         <link rel="stylesheet" href="beeswarmChart/css/style.css">
     </head>
     <body>
@@ -38,8 +39,9 @@
                 <li><a href="#intro"><span class="nav-dot"></span><span class="nav-label">Intro</span></a></li>
                 <li><a href="#slide01"><span class="nav-dot"></span><span class="nav-label">Network</span></a></li>
                 <li><a href="#slide02"><span class="nav-dot"></span><span class="nav-label">Barchart</span></a></li>
-                <li><a href="#slide03"><span class="nav-dot"></span><span class="nav-label">Beeswarm</span></a></li>
-                <li><a href="#slide04"><span class="nav-dot"></span><span class="nav-label">End</span></a></li>
+                <li><a href="#slide03"><span class="nav-dot"></span><span class="nav-label">Linechart</span></a></li>
+                <li><a href="#slide04"><span class="nav-dot"></span><span class="nav-label">Beeswarm</span></a></li>
+                <li><a href="#slide05"><span class="nav-dot"></span><span class="nav-label">End</span></a></li>
                 <li><a href="#footer"><span class="nav-dot"></span><span class="nav-label">Footer</span></a></li>
             </ul>
         </nav>
@@ -81,9 +83,17 @@
                 <div class="row">
                     <h3>Leonardo DiCaprio's Highest Rated Movies</h3>
                     <div class="col" id="barChart"></div>
+                </div>
             </article>
 
-            <article id="slide03" class="slide fs" style="height: 100%;">
+            <article id="slide03" class="slide fs">
+                <div class="row">
+                    <h3>Number of Movies Leonardo DiCaprio Has Starred In</h3>
+                    <div class="col" id="lineChart"></div>
+                </div>
+            </article>
+
+            <article id="slide04" class="slide fs" style="height: 100%;">
                 <h3 class="ms-5" style="color: black;">Top 200 Highest Grossing Films of All Time</h3>
                 <div class="row">
                     <div
@@ -94,7 +104,7 @@
                 </div>
             </article>
 
-            <article id="slide04" class="slide fs">
+            <article id="slide05" class="slide fs">
                 <div class="wrapper">
                     <header>
                         <h1>The End</h1>
@@ -143,6 +153,9 @@
 
         <script src="barChart/js/barChart.js"></script>
         <script src="barChart/js/main.js"></script>
+
+        <script src="lineChart/js/lineChart.js"></script>
+        <script src="lineChart/js/main.js"></script>
 
         <script src="beeswarmChart/js/beeswarmChart.js"></script>
         <script src="beeswarmChart/js/main.js"></script>
