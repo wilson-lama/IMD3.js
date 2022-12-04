@@ -48,7 +48,7 @@ async function constructGraph(nodes, links) {
 
     // create DOM elements
     const width = getViewportWidth(), // helper vars - old: 1400 x 700
-        height = getViewportHeight() / 4 - 200; // was () - 40
+        height = getViewportHeight() / 5 - 200; // was () - 40
     let yOffset = 0;
 
     const svg = d3

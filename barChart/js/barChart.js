@@ -54,7 +54,7 @@ class BarChart {
             .append("text")
             .attr("x", 600)
             .attr("y", 550)
-            .attr("fill", "grey")
+            .attr("fill", "lightgrey")
             .attr("font-weight", 10)
             .text("Movie Title");
 
@@ -62,7 +62,7 @@ class BarChart {
             .append("text")
             .attr("x", -300)
             .attr("y", -40)
-            .attr("fill", "grey")
+            .attr("fill", "lightgrey")
             .attr("transform", "rotate(-90)")
             .text("IMDb Rating");
 

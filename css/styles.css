@@ -319,11 +319,11 @@ p {
     padding-top: 120px;
     text-align: center; }
   .slide#slide01 {
-    background: #31725f;
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, #31725f), color-stop(100%, #2c4c63));
-    background: -webkit-linear-gradient(top, #31725f 0%, #2c4c63 100%);
-    background: linear-gradient(to bottom, #31725f 0%, #2c4c63 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#31725f', endColorstr='#2c4c63', GradientType=0 ); }
+    background: #43af8f;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #43af8f), color-stop(100%, #2c4c63));
+    background: -webkit-linear-gradient(top, #43af8f 0%, #2c4c63 100%);
+    background: linear-gradient(to bottom, #43af8f 0%, #2c4c63 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#43af8f', endColorstr='#2c4c63', GradientType=0 ); }
   .slide#slide02 {
     background: #723161;
     background: -webkit-gradient(left top, left bottom, color-stop(0%, #723161), color-stop(100%, #632c2d));
@@ -331,17 +331,23 @@ p {
     background: linear-gradient(to bottom, #723161 0%, #632c2d 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#723161', endColorstr='#632c2d', GradientType=0 ); }
   .slide#slide03 {
+    background: #4cc0d2;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #4cc0d2), color-stop(100%, #1561b2));
+    background: -webkit-linear-gradient(top, #4cc0d2 0%, #1561b2 100%);
+    background: linear-gradient(to bottom, #4cc0d2 0%, #1561b2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4cc0d2', endColorstr='#1561b2', GradientType=0 ); }
+  .slide#slide04 {
     background: #d2bb4c;
     background: -webkit-gradient(left top, left bottom, color-stop(0%, #d2bb4c), color-stop(100%, #c98332));
     background: -webkit-linear-gradient(top, #d2bb4c 0%, #c98332 100%);
     background: linear-gradient(to bottom, #d2bb4c 0%, #c98332 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2bb4c', endColorstr='#c98332', GradientType=0 ); }
-  .slide#slide04 {
-    background: #73549b;
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, #73549b), color-stop(100%, #313972));
-    background: -webkit-linear-gradient(top, #73549b 0%, #313972 100%);
-    background: linear-gradient(to bottom, #73549b 0%, #313972 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73549b', endColorstr='#313972', GradientType=0 ); }
+  .slide#slide05 {
+    background: #8c68bb;
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, #8c68bb), color-stop(100%, #313972));
+    background: -webkit-linear-gradient(top, #8c68bb 0%, #313972 100%);
+    background: linear-gradient(to bottom, #8c68bb 0%, #313972 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8c68bb', endColorstr='#313972', GradientType=0 ); }
 
 .button {
   text-decoration: none;

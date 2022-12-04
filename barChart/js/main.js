@@ -16,7 +16,6 @@ Promise.all(promises)
     });
 
 function initMainPage(allDataArray) {
-    console.log(allDataArray);
     barChart = new BarChart(
         "barChart",
         allDataArray[0],
