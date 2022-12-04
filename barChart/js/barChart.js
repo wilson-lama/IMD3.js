@@ -17,8 +17,8 @@ class BarChart {
         // vis.width = document.getElementById(vis.parentElement).getBoundingClientRect().width - vis.margin.left - vis.margin.right;
         // vis.height = document.getElementById(vis.parentElement).getBoundingClientRect().height - vis.margin.top - vis.margin.bottom;
 
-        vis.width = 1300;
-        vis.height = 500;
+        vis.width = 1200;
+        vis.height = 400;
 
         // SVG drawing area
         vis.svg = d3
@@ -56,7 +56,7 @@ class BarChart {
         vis.svg
             .append("text")
             .attr("x", 600)
-            .attr("y", 650)
+            .attr("y", 550)
             .attr("fill", "grey")
             .attr("font-weight", 10)
             .text("Movie Title");
