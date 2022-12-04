@@ -521,3 +521,23 @@ p {
     widows: 3; }
   h2, h3 {
     page-break-after: avoid; } }
+
+/* ===== custom ===== */
+
+h3 {
+  margin-left: 50px;
+  padding-top: 10px
+}
+
+.story-caption {
+  position: absolute;
+  float: left;
+  margin-top: 200px;
+  margin-left: 50px;
+  border: thin solid darkgrey;
+  border-radius: 5px;
+  background: lightgrey;
+  padding: 5px;
+  color: black;
+  font-weight: bold;
+}
