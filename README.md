@@ -6,6 +6,10 @@ A movie analytics storyboard made for Harvard University's Fall 2022 CS 171 fina
 
 Tom Zhang, Wilson Lama, and Teddy Lin.
 
+## Video Demo
+
+https://youtu.be/lWeFLpjjOSw
+
 ## How to Run the App
 
 Our app is hosted with GitHub Pages. Navigate to [wilson-lama.github.io/IMD3.js](https://wilson-lama.github.io/IMD3.js)
